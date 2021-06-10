@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4fbb3135-eec7-4c4e-adec-4dc5712381a3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../annotateapp/app/src/main/res/values/attrs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/proguard-rules.pro" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/androidTest/java/com/sippitechnologes/permissionhandling/ExampleInstrumentedTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/java/com/sippitechnologes/permissionhandling/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/app/src/test/java/com/sippitechnologes/permissionhandling/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../permissionhandling/settings.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1tY3MtxC62D4tRnINtN670c95Mz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../androidsdk/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.inlinked.gradle.project.popup" value="false" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4fbb3135-eec7-4c4e-adec-4dc5712381a3" name="Default Changelist" comment="" />
+      <created>1622932150041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622932150041</updated>
+    </task>
+    <servers />
+  </component>
+</project>
