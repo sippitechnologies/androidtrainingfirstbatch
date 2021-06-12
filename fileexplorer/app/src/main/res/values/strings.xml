@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="create_file">Create File</string>
+    <string name="create_folder">Create Folder</string>
+    <string name="file_created_successfully">File Created Successfully</string>
+    <string name="file_deleted_successfully">File Deleted Successfully</string>
+    <string name="file_permission_granted">File Permission Granted</string>
+    <string name="file_permission_not_granted">File Permission Not Granted</string>
+
+
+</resources>

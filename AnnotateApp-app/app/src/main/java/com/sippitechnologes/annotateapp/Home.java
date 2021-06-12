@@ -1,5 +1,18 @@
-package com.sippitechnologes.permissionhandling.takingimage;
+package com.sippitechnologes.annotateapp;
 
+import android.Manifest;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.Toast;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -7,76 +20,11 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
 
-import android.Manifest;
-import android.annotation.SuppressLint;
-import android.content.ActivityNotFoundException;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
+public class Home extends AppCompatActivity implements View.OnClickListener {
 
-import com.sippitechnologes.permissionhandling.MainActivity2;
-import com.sippitechnologes.permissionhandling.R;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
-public class TakeImageFromCamera extends AppCompatActivity implements View.OnClickListener {
-
-
-    private static final String IMAGE_DIRECTORY = "FileHandling" ;
     public static int REQUEST_IMAGE_CAPTURE=300;
-    ImageView imageView;
-    Button btn_camera,btn_gallery;
-
-
-
-
-    public String saveImage(Bitmap myBitmap) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        myBitmap.compress(Bitmap.CompressFormat.JPEG, 90, bytes);
-        File wallpaperDirectory = new File(Environment.getExternalStorageDirectory() + IMAGE_DIRECTORY);
-        if (!wallpaperDirectory.exists()) {  // have the object build the directory structure, if needed.
-            wallpaperDirectory.mkdirs();
-        }
-
-        try {
-            File f = new File(wallpaperDirectory, Calendar.getInstance().getTimeInMillis() + ".jpg");
-            f.createNewFile();
-            FileOutputStream fo = new FileOutputStream(f);
-            fo.write(bytes.toByteArray());
-            MediaScannerConnection.scanFile(this,
-                    new String[]{f.getPath()},
-                    new String[]{"image/jpeg"}, null);
-            fo.close();
-            Log.d("TAG", "File Saved::---&gt;" + f.getAbsolutePath());
-
-            return f.getAbsolutePath();
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-        return "";
-    }
-
-
+    ImageButton btn_camera,btn_gallery;
 
     private ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
@@ -88,31 +36,24 @@ public class TakeImageFromCamera extends AppCompatActivity implements View.OnCli
                 }
             });
 
-   ActivityResultLauncher galleryActivityLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
-       @Override
-       public void onActivityResult(Uri result) {
-
-
-           String path = result.getPath();
-           imageView.setImageURI(result);
-           Intent intent = new Intent();
-           intent.putExtra("path",result);
-
-
-
-       }
-   });
+    ActivityResultLauncher galleryActivityLauncher = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+        @Override
+        public void onActivityResult(Uri result) {
+            Intent galleryintent = new Intent(getApplicationContext(), MainActivity.class);
+            galleryintent.putExtra("path",result);
+            galleryintent.putExtra("label","labelfromgallery");
+            startActivity(galleryintent);
+        }
+    });
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_take_image_from_camera);
-        imageView = findViewById(R.id.img_preview);
-        btn_camera = findViewById(R.id.btn_camera);
-        btn_gallery = findViewById(R.id.btn_gallery);
+        setContentView(R.layout.home_layout);
+        btn_camera = findViewById(R.id.camera);
+        btn_gallery = findViewById(R.id.gallery);
         btn_camera.setOnClickListener(this);
         btn_gallery.setOnClickListener(this);
     }
-
 
     private void dispatchTakePictureIntent() {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -129,12 +70,13 @@ public class TakeImageFromCamera extends AppCompatActivity implements View.OnCli
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-            Intent intent = new Intent();
-            intent.putExtra("camearImage",intent.getExtras());
+         /*   Intent intent = new Intent();
+            intent.putExtra("camearImage",intent.getExtras());*/
 
             Bitmap imageBitmap = (Bitmap) extras.get("data");
-            saveImage(imageBitmap);
-            imageView.setImageBitmap(imageBitmap);
+          Intent camera_intent = new Intent(getApplicationContext(),MainActivity.class);
+            camera_intent.putExtra("bundle",extras);
+            camera_intent.putExtra("label","labelfromcamera");
         }
     }
 
@@ -145,14 +87,13 @@ public class TakeImageFromCamera extends AppCompatActivity implements View.OnCli
     {
         switch (v.getId())
         {
-            case R.id.btn_camera:
+            case R.id.camera:
                 checkCameraPermission();
-               // dispatchTakePictureIntent();
 
-            break;
-            case  R.id.btn_gallery:
-            galleryActivityLauncher.launch("image/*");
-            break;
+                break;
+            case  R.id.gallery:
+                galleryActivityLauncher.launch("image/*");
+                break;
         }
     }
 
@@ -164,7 +105,7 @@ public class TakeImageFromCamera extends AppCompatActivity implements View.OnCli
     }
     void showDialog(String title,String message)
     {
-        AlertDialog alertDialog = new AlertDialog.Builder(TakeImageFromCamera.this)
+        AlertDialog alertDialog = new AlertDialog.Builder(Home.this)
                 .setTitle(title)
                 .setMessage(message).setPositiveButton(R.string.allow, new DialogInterface.OnClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -194,7 +135,7 @@ public class TakeImageFromCamera extends AppCompatActivity implements View.OnCli
     {
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_GRANTED)
         {
-           dispatchTakePictureIntent();
+            dispatchTakePictureIntent();
         }
         else
         {

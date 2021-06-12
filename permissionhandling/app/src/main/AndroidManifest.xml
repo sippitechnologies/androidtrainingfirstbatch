@@ -5,7 +5,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera"
+
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
     <application
@@ -15,18 +17,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PermissionHandling">
+        <activity android:name=".CameraPreviewActivity"></activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.android.fileprovider"
+            android:authorities="com.sippitechnologes.permissionhandling.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
-        <activity android:name=".CameraPreviewActivity"/>
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".takingimage.TakeImageFromCamera">
+
+        <activity android:name=".takingimage.TakeImageFromCameraAndSave" />
+        <activity android:name=".MainActivity" />
+
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".takingimage.ImagePickerLibraryTest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
